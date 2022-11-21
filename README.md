@@ -1,27 +1,46 @@
-# 2022F2EW3
+# 2022 The F2E Week3
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.7.
+## 作品說明
 
-## Development server
+本作品為六角學院 2022 The F2E Week1 的競賽主題：[Week3 - Scrum 新手村](https://2022.thef2e.com/news/week3)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+作品採用設計師[邱仲德](https://2022.thef2e.com/users/12061549261446563754)的[Figma 設計稿](https://www.figma.com/file/kbtC7fpZWSjEAzeJmnsVO2/Scrum-%E6%96%B0%E6%89%8B%E6%9D%91?node-id=216%3A3183&t=L4sNGiRA8DW2fpAd-0)
 
-## Code scaffolding
+[Demo](https://qazs10015.github.io/2022_F2E_w3/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 系統說明
 
-## Build
+專案運行方式是使用 `npm install`、`npm start`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* NodeJS：16.14.0
 
-## Running unit tests
+* Angular CLI：14.2.7
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 資料夾說明
 
-## Running end-to-end tests
+```
+src
+ | --- app
+ | --- animes (設計師提供的動畫檔)
+ | --- service 
+ | --- interface 
+ | --- sign-doc
+ |       | --- create-sign (建立/上傳簽名檔)
+ |       | --- preview-doc (瀏覽 pdf 並可依位置放上簽名檔並儲存)
+ | --- app-routing.module.ts
+ | --- app.component.html
+ | --- app.component.scss
+ | --- app.component.ts
+ | --- app.module.ts
+ |
+ | --- assets (images、styles、fonts)
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## 使用技術
 
-## Further help
+* Framework：Angular
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+* Programming Language：Typescript、Javascript、HTML、SCSS
+
+* 其他套件：
+
