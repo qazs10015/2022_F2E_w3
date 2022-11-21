@@ -2,7 +2,7 @@
 
 ## 作品說明
 
-本作品為六角學院 2022 The F2E Week1 的競賽主題：[Week3 - Scrum 新手村](https://2022.thef2e.com/news/week3)
+本作品為六角學院 2022 The F2E Week3 的競賽主題：[Week3 - Scrum 新手村](https://2022.thef2e.com/news/week3)
 
 作品採用設計師[邱仲德](https://2022.thef2e.com/users/12061549261446563754)的[Figma 設計稿](https://www.figma.com/file/kbtC7fpZWSjEAzeJmnsVO2/Scrum-%E6%96%B0%E6%89%8B%E6%9D%91?node-id=216%3A3183&t=L4sNGiRA8DW2fpAd-0)
 
