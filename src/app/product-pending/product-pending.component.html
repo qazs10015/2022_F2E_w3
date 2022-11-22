@@ -1,1 +1,50 @@
-<p>product-pending works!</p>
+<div class="dialog" *ngIf="isShowDialog">
+  <div class="desc"></div>
+  <app-start-button
+    class="startButton"
+    (click)="isShowDialog = false"
+  ></app-start-button>
+</div>
+<app-layout>
+  <div>
+    <img src="assets/images/process_2.png" alt="" />
+  </div>
+  <div class="overView">
+    <img class="avatar" src="assets/images/productManager_Head.png" alt="" />
+    <img src="assets/images/po_targetDescription.png" alt="" />
+  </div>
+  <div class="content">
+    <div class="interactiveContent">
+      <!-- items -->
+      <div>
+        <ul>
+          <li class="dragItem font_BH3 secondary">
+            會員系統（登入、註冊、管理）
+          </li>
+          <li class="dragItem font_BH3 secondary">應徵者的線上履歷編輯器</li>
+          <li class="dragItem font_BH3 secondary">
+            前台職缺列表
+
+            <span class="font_paragraph"
+              >（缺詳細內容、點選可發送應徵意願）</span
+            >
+          </li>
+          <li class="dragItem font_BH3 secondary">
+            後台職缺管理功能
+            <span class="font_paragraph"
+              >（資訊上架、下架、顯示應徵者資料）</span
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- rock -->
+      <div>
+        <img src="assets/images/rock.png" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- back or next -->
+    <div></div>
+  </div>
+</app-layout>

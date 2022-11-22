@@ -9,6 +9,7 @@
 body {
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
 }
 .primary {
   color: var(--primary);
@@ -24,6 +25,9 @@ body {
 }
 .white {
   color: var(--white);
+}
+.bg-white {
+  background-color: var(--white);
 }
 
 // 字型大小
@@ -52,4 +56,14 @@ body {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.dialog {
+  top: 0;
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(20px);
 }

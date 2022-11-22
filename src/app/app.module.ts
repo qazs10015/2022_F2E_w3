@@ -11,6 +11,8 @@ import { SprintIntroduceComponent } from './sprint-introduce/sprint-introduce.co
 import { SprintFlowComponent } from './sprint-flow/sprint-flow.component';
 import { RetroComponent } from './retro/retro.component';
 import { TheEndComponent } from './the-end/the-end.component';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { StartButtonComponent } from './shared/layout/start-button/start-button.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TheEndComponent } from './the-end/the-end.component';
     SprintIntroduceComponent,
     SprintFlowComponent,
     RetroComponent,
-    TheEndComponent
+    TheEndComponent,
+    LayoutComponent,
+    StartButtonComponent
   ],
   imports: [
     BrowserModule,

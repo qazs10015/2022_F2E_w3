@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductPendingComponent implements OnInit {
 
+  isShowDialog = false;
   constructor() { }
 
   ngOnInit(): void {

@@ -1,0 +1,90 @@
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  .desc {
+    background-image: url(../../assets/images/po_Introduce.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 1208px;
+    height: 584px;
+  }
+  .startButton {
+    position: absolute;
+    right: 120px;
+    bottom: 216px;
+  }
+}
+
+.overView {
+  .avatar {
+    width: 100px;
+    margin-left: 60px;
+    margin-right: 12px;
+  }
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .interactiveContent {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    & > div {
+      width: 50%;
+      z-index: 1;
+    }
+    ul {
+      padding: 0;
+      list-style: none;
+      li:nth-child(even) {
+        margin-left: 120px;
+      }
+      li:nth-child(odd) {
+        margin-left: 60px;
+      }
+      .dragItem {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 520px;
+        height: 84px;
+        padding: 24px 36px;
+        box-sizing: border-box;
+        border-radius: 12px;
+        background-color: rgba(255, 255, 255, 1);
+        position: relative;
+        margin-bottom: 32px;
+        span {
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 526px;
+          min-height: 89px;
+          left: 5px;
+          top: 6px;
+          background-color: rgba(#473438, 0.75);
+          border-radius: 12px;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  background-image: url(../../assets/images/productPending_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 1440px;
+  height: 218px;
+  bottom: 0;
+}
