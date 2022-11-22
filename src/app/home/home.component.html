@@ -1,0 +1,26 @@
+<section class="container">
+  <div class="home1">
+    <div
+      class="startExplore"
+      (click)="
+        home2.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'end'
+        })
+      "
+    >
+      <p class="title white font_BH1">開始探索</p>
+      <a class="exploreButton cursor-pointer"
+        ><img src="assets/images/arrow.png"
+      /></a>
+    </div>
+  </div>
+  <div #home2 class="home2">
+    <a
+      routerLink="/roles"
+      class="startButton bg-primary secondary font_BH4 cursor-pointer"
+      >接受挑戰</a
+    >
+  </div>
+</section>

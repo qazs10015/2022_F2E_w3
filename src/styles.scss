@@ -1,1 +1,55 @@
 /* You can add global styles to this file, and also import other style files */
+@import "_fonts";
+@import "_variables";
+
+* {
+  font-family: "GenJyuuGothic";
+}
+
+body {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.primary {
+  color: var(--primary);
+}
+.bg-primary {
+  background-color: var(--primary);
+}
+.secondary {
+  color: var(--secondary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.white {
+  color: var(--white);
+}
+
+// 字型大小
+.font_BH1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+.font_BH2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+.font_BH3 {
+  font-size: 32px;
+  font-weight: bold;
+}
+.font_BH4 {
+  font-size: 28px;
+  font-weight: bold;
+}
+.font_paragraph {
+  font-size: 24px;
+}
+.font_notice {
+  font-size: 16px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

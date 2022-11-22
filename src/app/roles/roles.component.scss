@@ -1,0 +1,54 @@
+@mixin role($source, $width, $height) {
+  background-image: $source;
+  background-repeat: no-repeat;
+  width: $width;
+  height: $height;
+  position: absolute;
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+.container {
+  overflow: hidden;
+  .bgImg {
+    background-image: url(../../assets/images/roles.png);
+    background-repeat: no-repeat;
+    width: 1440px;
+    height: 100vh;
+    position: relative;
+    // product owner
+
+    .po {
+      @include role(url(../../assets/images/productManager.png), 136px, 294px);
+      top: 254.1px;
+      left: 196px;
+    }
+
+    // scrum master
+    .sm {
+      @include role(url(../../assets/images/scrumMaster.png), 148px, 316px);
+      top: 232.75px;
+      left: 646px;
+    }
+
+    // development team
+    .dt {
+      @include role(url(../../assets/images/developmentTeam.png), 144px, 315px);
+      top: 233px;
+      right: 192px;
+    }
+    .next {
+      background-image: url(../../assets/images/next.png);
+      background-repeat: no-repeat;
+      width: 328px;
+      height: 96px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
