@@ -13,7 +13,13 @@ import { RetroComponent } from './retro/retro.component';
 import { TheEndComponent } from './the-end/the-end.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { StartButtonComponent } from './shared/layout/start-button/start-button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
+
+const ngCDK = [
+  DragDropModule
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +36,10 @@ import { StartButtonComponent } from './shared/layout/start-button/start-button.
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ...ngCDK
+
   ],
   providers: [],
   bootstrap: [AppComponent]
