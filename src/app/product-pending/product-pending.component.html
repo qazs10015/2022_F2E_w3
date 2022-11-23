@@ -17,30 +17,68 @@
     <div class="interactiveContent">
       <!-- items -->
       <div>
-        <ul class="productPendingFrom" cdkDrag>
-          <li class="dragItem font_BH3 secondary">
-            會員系統（登入、註冊、管理）
-          </li>
-          <li class="dragItem font_BH3 secondary">應徵者的線上履歷編輯器</li>
-          <li class="dragItem font_BH3 secondary">
-            前台職缺列表
-
-            <span class="font_paragraph"
-              >（缺詳細內容、點選可發送應徵意願）</span
-            >
-          </li>
-          <li class="dragItem font_BH3 secondary">
-            後台職缺管理功能
-            <span class="font_paragraph"
-              >（資訊上架、下架、顯示應徵者資料）</span
+        <ul
+          cdkDropList
+          #todoList="cdkDropList"
+          [cdkDropListData]="todo"
+          [cdkDropListConnectedTo]="[doneList]"
+          class="productPendingFrom"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <li
+            class="dragItem font_BH3 secondary"
+            *ngFor="let item of todo"
+            cdkDrag
+          >
+            {{ item.title }}
+            <span class="font_paragraph" *ngIf="item.note">
+              {{ item.note }}</span
             >
           </li>
         </ul>
       </div>
       <!-- rock -->
-      <div>
-        <!-- <ul class="productPendingTo"></ul> -->
-        <img src="assets/images/rock.png" alt="" />
+      <div class="productPendingToContainer">
+        <div class="bg_rock"><img src="assets/images/rock.png" alt="" /></div>
+        <ul
+          cdkDropList
+          #doneList="cdkDropList"
+          [cdkDropListData]="done"
+          [cdkDropListConnectedTo]="[todoList]"
+          class="productPendingTo"
+          (cdkDropListDropped)="drop($event)"
+        >
+          <li
+            class="nonSelect font_BH3 secondary"
+            *ngIf="done.length === 0"
+            cdkDrag
+          >
+            {{ "empty" }}
+          </li>
+          <li
+            class="dragItem font_BH3 secondary"
+            *ngFor="let item of done"
+            cdkDrag
+          >
+            {{ item.title }}
+            <span class="font_paragraph" *ngIf="item.note">
+              {{ item.note }}</span
+            >
+          </li>
+        </ul>
+
+        <!-- <ul class="productPendingTo">
+          <li
+            class="dragItem font_BH3 secondary"
+            *ngFor="let item of todo"
+            cdkDrag
+          >
+            {{ item.title }}
+            <span class="font_paragraph" *ngIf="item.note">
+              {{ item.note }}</span
+            >
+          </li>
+        </ul> -->
       </div>
     </div>
   </div>
