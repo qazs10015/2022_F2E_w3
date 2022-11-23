@@ -7,6 +7,7 @@ import { ProductPendingComponent } from './product-pending/product-pending.compo
 import { RolesComponent } from './roles/roles.component';
 import { SprintIntroduceComponent } from './sprint-introduce/sprint-introduce.component';
 import { TheEndComponent } from './the-end/the-end.component';
+import { RetroComponent } from './retro/retro.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'sprintPending', component: SprintPendingComponent },
   { path: 'sprintIntroduce', component: SprintIntroduceComponent },
   { path: 'sprintFlow', component: SprintFlowComponent },
+  { path: 'retro', component: RetroComponent },
   { path: 'theEndComponent', component: TheEndComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }];
 
@@ -23,3 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+

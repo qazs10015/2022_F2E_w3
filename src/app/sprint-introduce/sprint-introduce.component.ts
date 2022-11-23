@@ -13,11 +13,18 @@ enum SprintCycle {
 })
 export class SprintIntroduceComponent implements OnInit {
 
-  sprintCycle = SprintCycle
+  sprintCycle = SprintCycle;
   currentTabIdx = SprintCycle.DAILY_SCRUM;
+
+  canGoNext = false;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    // 避免滑鼠點太快直接往下一頁
+    setTimeout(() => {
+      this.canGoNext = true;
+    }, 2000);
   }
 
   goPrevious() {

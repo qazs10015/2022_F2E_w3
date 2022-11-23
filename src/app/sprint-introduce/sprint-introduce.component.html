@@ -4,7 +4,6 @@
   </div>
   <div class="overView">
     <img src="assets/images/dt_introduce.png" alt="" />
-    <!-- <img src="assets/images/po_wrongAnswer.png" alt=""  /> -->
   </div>
   <div class="tabs">
     <div
@@ -67,7 +66,7 @@
     <app-navigation-button
       (clickPreButton)="goPrevious()"
       (clickNextButton)="goNext()"
-      [enableNextButton]="true"
+      [enableNextButton]="canGoNext"
     ></app-navigation-button>
   </div>
 </app-layout>

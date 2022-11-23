@@ -1,1 +1,136 @@
-<p>sprint-flow works!</p>
+<app-layout>
+  <div>
+    <img src="assets/images/process_5.png" alt="" />
+  </div>
+  <div class="overView">
+    <img src="assets/images/{{ messageImg }}" alt="" />
+  </div>
+  <div class="content">
+    <div class="flow"></div>
+    <div class="sprintCycle"></div>
+    <div cdkDropListGroup>
+      <ul
+        cdkDropList
+        id="sprintItem"
+        #sprintItem="cdkDropList"
+        [cdkDropListData]="sprintItemList"
+        [cdkDropListConnectedTo]="[
+          dailyScrum,
+          sprintReview,
+          sprintRetrospective
+        ]"
+        (cdkDropListDropped)="drop($event)"
+        class="sprintItemStyle"
+      >
+        <li
+          class="dragItem font_BH3 secondary"
+          *ngFor="let item of sprintItemList"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          {{ item.title }}
+          <span class="font_paragraph" *ngIf="item.note"> {{ item.note }}</span>
+        </li>
+      </ul>
+
+      <ul
+        cdkDropList
+        id="dailyScrum"
+        #dailyScrum="cdkDropList"
+        [cdkDropListConnectedTo]="[
+          sprintItem,
+          sprintReview,
+          sprintRetrospective
+        ]"
+        [cdkDropListData]="dailyScrumList"
+        (cdkDropListDropped)="drop($event)"
+        class="dailyScrumStyle"
+      >
+        <li
+          class="nonSelect font_BH3 secondary"
+          *ngIf="dailyScrumList.length === 0"
+          [cdkDragDisabled]="true"
+          cdkDrag
+        >
+          {{ "" }}
+        </li>
+        <li
+          class="dragItem font_BH3 secondary"
+          *ngFor="let item of dailyScrumList"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          {{ item.title }}
+          <span class="font_paragraph" *ngIf="item.note"> {{ item.note }}</span>
+        </li>
+      </ul>
+
+      <ul
+        cdkDropList
+        id="sprintReview"
+        #sprintReview="cdkDropList"
+        [cdkDropListConnectedTo]="[sprintItem, dailyScrum, sprintRetrospective]"
+        [cdkDropListData]="sprintReviewList"
+        (cdkDropListDropped)="drop($event)"
+        class="sprintReviewStyle"
+      >
+        <li
+          class="nonSelect font_BH3 secondary"
+          *ngIf="sprintReviewList.length === 0"
+          [cdkDragDisabled]="true"
+          cdkDrag
+        >
+          {{ "" }}
+        </li>
+        <li
+          class="dragItem font_BH3 secondary"
+          *ngFor="let item of sprintReviewList"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          {{ item.title }}
+          <span class="font_paragraph" *ngIf="item.note"> {{ item.note }}</span>
+        </li>
+      </ul>
+
+      <ul
+        cdkDropList
+        id="sprintRetrospective"
+        #sprintRetrospective="cdkDropList"
+        [cdkDropListConnectedTo]="[sprintItem, dailyScrum, sprintReview]"
+        [cdkDropListData]="sprintRetrospectiveList"
+        (cdkDropListDropped)="drop($event)"
+        class="sprintRetrospectiveStyle"
+      >
+        <li
+          class="nonSelect font_BH3 secondary"
+          *ngIf="sprintRetrospectiveList.length === 0"
+          [cdkDragDisabled]="true"
+          cdkDrag
+        >
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          {{ "" }}
+        </li>
+        <li
+          class="dragItem font_BH3 secondary"
+          *ngFor="let item of sprintRetrospectiveList"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          <div class="custom-placeholder" *cdkDragPlaceholder></div>
+          {{ item.title }}
+          <span class="font_paragraph" *ngIf="item.note"> {{ item.note }}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- back or next -->
+    <app-navigation-button
+      (clickPreButton)="goPrevious()"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="isCorrectAnswer"
+    ></app-navigation-button>
+  </div>
+</app-layout>

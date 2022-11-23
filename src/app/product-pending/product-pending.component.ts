@@ -41,6 +41,8 @@ export class ProductPendingComponent implements OnInit {
 
   }
 
+
+
   goPrevious() {
     this.router.navigateByUrl('/roles');
   }
