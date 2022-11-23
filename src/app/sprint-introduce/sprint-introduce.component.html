@@ -1,1 +1,73 @@
-<p>sprint-introduce works!</p>
+<app-layout>
+  <div>
+    <img src="assets/images/process_4.png" alt="" />
+  </div>
+  <div class="overView">
+    <img src="assets/images/dt_introduce.png" alt="" />
+    <!-- <img src="assets/images/po_wrongAnswer.png" alt=""  /> -->
+  </div>
+  <div class="tabs">
+    <div
+      (click)="currentTabIdx = sprintCycle.DAILY_SCRUM"
+      class="white titleGroup"
+      [class.active]="currentTabIdx === sprintCycle.DAILY_SCRUM"
+    >
+      <span class="font_BH3 cursor-pointer">每日站立會議</span>
+      <span class="font_BH4 cursor-pointer">Daily Scrum</span>
+    </div>
+    <div
+      (click)="currentTabIdx = sprintCycle.SPRINT_PREVIEW"
+      class="white titleGroup font_BH3"
+      [class.active]="currentTabIdx === sprintCycle.SPRINT_PREVIEW"
+    >
+      <span class="font_BH3 cursor-pointer">短衝檢視會議</span>
+      <span class="font_BH4 cursor-pointer">Sprint Review</span>
+    </div>
+    <div
+      (click)="currentTabIdx = sprintCycle.SPRINT_RETROSPECTIVE"
+      class="white titleGroup font_BH3"
+      [class.active]="currentTabIdx === sprintCycle.SPRINT_RETROSPECTIVE"
+    >
+      <span class="font_BH3 cursor-pointer">短衝自省會議</span>
+      <span class="font_BH4 cursor-pointer">Sprint Retrospective</span>
+    </div>
+  </div>
+  <div class="content bg-white font_BH3 secondary">
+    <div *ngIf="currentTabIdx === sprintCycle.DAILY_SCRUM">
+      <div>每天都要進行的會議，以 15 分鐘為限制 ：</div>
+      <ul>
+        <li>昨天為團隊的短衝目標（Sprint Goal）做了那些進度</li>
+        <li>今天我會如何準備來幫助團隊達到短衝目標</li>
+        <li>過程中有遇到什麼問題、難題</li>
+      </ul>
+      <div>透過團隊分享，追蹤大家的工作狀況。</div>
+    </div>
+
+    <div *ngIf="currentTabIdx === sprintCycle.SPRINT_PREVIEW">
+      <div>
+        向利害關係人（Stakeholder）展示工作結果，蒐集使用回饋，分享市場反應，並一起討論下一步工作方向。
+      </div>
+      <div>
+        在短衝檢視會議過程中，會取得使用者或利害關係人對於本次短衝增量的回饋數據或意見，討論哪些想法值得納入至產品待辦清單去實踐。
+      </div>
+    </div>
+
+    <div *ngIf="currentTabIdx === sprintCycle.SPRINT_RETROSPECTIVE">
+      <div>
+        團隊在自省會議裡，會共同回顧該短衝歷程發生的事情、好的地方及可以改進的地方。
+      </div>
+      <div>
+        檢討如何維持已有的成功經驗、優化工作流程，讓團隊運作愈來愈進步。
+      </div>
+      <div>推薦工具：<img src="assets/images/conflunce.png" alt="" /></div>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- back or next -->
+    <app-navigation-button
+      (clickPreButton)="goPrevious()"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="true"
+    ></app-navigation-button>
+  </div>
+</app-layout>
