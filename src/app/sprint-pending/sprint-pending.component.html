@@ -1,1 +1,99 @@
-<p>sprint-pending works!</p>
+<div class="dialog" *ngIf="isShowDialog">
+  <div class="desc">
+    <img src="assets/images/po_dialog.png" alt="" />
+    <img src="assets/images/sm_dialog.png" alt="" />
+    <img src="assets/images/dt_dialog.png" alt="" />
+  </div>
+  <app-start-button
+    class="startButton"
+    (click)="isShowDialog = false"
+  ></app-start-button>
+</div>
+<app-layout>
+  <div>
+    <img src="assets/images/process_3.png" alt="" />
+  </div>
+  <div class="content">
+    <div class="productPendingList">
+      <div class="title font_BH2 secondary">產品待辦清單Product Backlog</div>
+      <div class="cubeList"></div>
+      <ul
+        cdkDropList
+        #todoList="cdkDropList"
+        [cdkDropListData]="todo"
+        [cdkDropListConnectedTo]="[doneList]"
+        (cdkDropListDropped)="drop($event, 'todo')"
+      >
+        <li
+          class="dragItem font_BH4 white"
+          *ngFor="let item of todo"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          <div class="dragItemGroup">
+            {{ item.title }}
+
+            <span class="font_paragraph" *ngIf="item.note">
+              {{ item.note }}</span
+            >
+          </div>
+          <div>
+            <img src="assets/images/whiteCube.png" alt="" />
+            x {{ item.point }}
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="sprintPendingList">
+      <div class="title font_BH2 secondary">開發 A 組的短衝待辦清單</div>
+      <div class="cubeList">
+        <ng-container *ngFor="let item of currentPoints; let idx = index">
+          <img src="assets/images/whiteCube.png" alt="" *ngIf="idx < 20" />
+          <img src="assets/images/redCube.png" alt="" *ngIf="idx >= 20" />
+        </ng-container>
+        <div class="alertMessage" *ngIf="currentPoints.length >= 20">
+          點數超過了唷~再試著調整一下!
+        </div>
+      </div>
+
+      <ul
+        cdkDropList
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList]"
+        (cdkDropListDropped)="drop($event, 'done')"
+      >
+        <li class="nonSelect font_BH4 white" *ngIf="done.length === 0" cdkDrag>
+          {{ "empty" }}
+        </li>
+
+        <li
+          class="dragItem font_BH4 white"
+          *ngFor="let item of done"
+          cdkDrag
+          [cdkDragData]="item"
+        >
+          <div class="dragItemGroup">
+            {{ item.title }}
+
+            <span class="font_paragraph" *ngIf="item.note">
+              {{ item.note }}</span
+            >
+          </div>
+          <div>
+            <img src="assets/images/whiteCube.png" alt="" />
+            x {{ item.point }}
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- back or next -->
+    <app-navigation-button
+      (clickPreButton)="goPrevious()"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="canGoNext"
+    ></app-navigation-button>
+  </div>
+</app-layout>

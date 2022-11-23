@@ -1,0 +1,148 @@
+@mixin dragItem($width, $height) {
+  .dragItem {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // flex-direction: column;
+    width: $width;
+    height: $height;
+    padding: 24px 36px;
+    box-sizing: border-box;
+    border-radius: 12px;
+    background-color: var(--green);
+    position: relative;
+    box-shadow: 10px 10px var(--secondary);
+  }
+}
+
+@mixin dragItemGroup {
+  .dragItemGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+}
+
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  .desc {
+    padding-top: 84px;
+    width: 1208px;
+    height: 100vh;
+    img {
+      margin-bottom: 36px;
+    }
+  }
+  .startButton {
+    position: absolute;
+    right: 85px;
+    bottom: 50px;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .title {
+    padding-top: 36px;
+  }
+  .cubeList {
+    width: 600px;
+    height: 72px;
+    img {
+      margin-right: 8px;
+    }
+  }
+
+  .productPendingList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+
+    li {
+      margin-bottom: 34px;
+    }
+
+    @include dragItem(600px, 104px);
+    @include dragItemGroup();
+  }
+
+  .sprintPendingList {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    height: 100vh;
+
+    li {
+      margin-bottom: 34px;
+      .nonSelected {
+        width: 520px;
+        height: 84px;
+      }
+    }
+    @include dragItem(600px, 104px);
+    @include dragItemGroup();
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    background-image: url(../../assets/images/emptyList.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 594px;
+    height: 516px;
+  }
+
+  .nonSelect {
+    width: 521px;
+    height: 98px;
+    // background-color: red;
+    visibility: hidden;
+  }
+}
+
+.footer {
+  background-image: url(../../assets/images/sprintPending_bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  width: 1440px;
+  height: 584px;
+  bottom: 0;
+}
+
+.cdk-drag-preview {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 24px 36px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  background-color: var(--green);
+  position: relative;
+  box-shadow: 10px 10px var(--secondary);
+  opacity: 0.75;
+  @include dragItemGroup();
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+.alertMessage {
+  color: red;
+}
