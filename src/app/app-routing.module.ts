@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'productPending', component: ProductPendingComponent },
-  { path: 'productPending', component: ProductPendingComponent },
   { path: 'sprintPending', component: SprintPendingComponent },
   { path: 'sprintIntroduce', component: SprintIntroduceComponent },
   { path: 'sprintFlow', component: SprintFlowComponent },

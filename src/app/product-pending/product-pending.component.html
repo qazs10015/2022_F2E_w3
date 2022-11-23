@@ -11,7 +11,9 @@
   </div>
   <div class="overView">
     <img class="avatar" src="assets/images/productManager_Head.png" alt="" />
-    <img src="assets/images/po_targetDescription.png" alt="" />
+
+    <img src="assets/images/{{ messageImg }}" alt="" />
+    <!-- <img src="assets/images/po_wrongAnswer.png" alt=""  /> -->
   </div>
   <div class="content">
     <div class="interactiveContent">
@@ -66,24 +68,15 @@
             >
           </li>
         </ul>
-
-        <!-- <ul class="productPendingTo">
-          <li
-            class="dragItem font_BH3 secondary"
-            *ngFor="let item of todo"
-            cdkDrag
-          >
-            {{ item.title }}
-            <span class="font_paragraph" *ngIf="item.note">
-              {{ item.note }}</span
-            >
-          </li>
-        </ul> -->
       </div>
     </div>
   </div>
   <div class="footer">
     <!-- back or next -->
-    <div></div>
+    <app-navigation-button
+      (clickPreButton)="goPrevious()"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="done.length === 4"
+    ></app-navigation-button>
   </div>
 </app-layout>

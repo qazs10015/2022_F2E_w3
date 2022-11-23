@@ -6,6 +6,10 @@
     <div class="sm"></div>
     <!-- development team -->
     <div class="dt"></div>
-    <a class="next cursor-pointer" routerLink="/productPending"></a>
+    <app-navigation-button
+      [showPreButton]="false"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="true"
+    ></app-navigation-button>
   </div>
 </section>

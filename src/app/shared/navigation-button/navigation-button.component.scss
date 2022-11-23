@@ -1,0 +1,32 @@
+.navigationContainer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 50px 37px;
+
+  .previous {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .next {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .enableButton {
+    color: var(--grey);
+    &:hover {
+      transform: scale(1);
+    }
+    cursor: default;
+  }
+
+  .hideButton {
+    visibility: hidden;
+  }
+}

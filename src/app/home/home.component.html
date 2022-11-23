@@ -18,9 +18,18 @@
   </div>
   <div #home2 class="home2">
     <a
-      routerLink="/roles"
+      (click)="
+        home3.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+          inline: 'end'
+        })
+      "
       class="startButton bg-primary secondary font_BH4 cursor-pointer"
       >接受挑戰</a
     >
+  </div>
+  <div #home3>
+    <app-roles></app-roles>
   </div>
 </section>

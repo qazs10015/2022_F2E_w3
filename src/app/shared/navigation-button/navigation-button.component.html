@@ -1,0 +1,18 @@
+<div class="navigationContainer">
+  <!-- back or next -->
+  <a
+    (click)="goPrevious()"
+    class="previous font_BH4 cursor-pointer white"
+    [class.hideButton]="!showPreButton"
+  >
+    <span class="material-icons"> arrow_back_ios </span>回上一座島
+  </a>
+  <a
+    (click)="goNext()"
+    class="next font_BH4 cursor-pointer white"
+    [class.hideButton]="!showNextButton"
+    [class.enableButton]="!enableNextButton"
+  >
+    前往下一座島<span class="material-icons"> arrow_forward_ios </span>
+  </a>
+</div>

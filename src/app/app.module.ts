@@ -12,9 +12,10 @@ import { SprintFlowComponent } from './sprint-flow/sprint-flow.component';
 import { RetroComponent } from './retro/retro.component';
 import { TheEndComponent } from './the-end/the-end.component';
 import { LayoutComponent } from './shared/layout/layout.component';
-import { StartButtonComponent } from './shared/layout/start-button/start-button.component';
+import { StartButtonComponent } from './shared/start-button/start-button.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { NavigationButtonComponent } from './shared/navigation-button/navigation-button.component';
 
 
 const ngCDK = [
@@ -32,7 +33,8 @@ const ngCDK = [
     RetroComponent,
     TheEndComponent,
     LayoutComponent,
-    StartButtonComponent
+    StartButtonComponent,
+    NavigationButtonComponent
   ],
   imports: [
     BrowserModule,
