@@ -13,7 +13,7 @@
       [class.active]="currentTabIdx === sprintCycle.DAILY_SCRUM"
     >
       <span class="font_BH3 cursor-pointer">每日站立會議</span>
-      <span class="font_BH4 cursor-pointer">Daily Scrum</span>
+      <span class="font_paragraph cursor-pointer">Daily Scrum</span>
     </div>
     <div
       (click)="currentTabIdx = sprintCycle.SPRINT_PREVIEW"
@@ -21,7 +21,7 @@
       [class.active]="currentTabIdx === sprintCycle.SPRINT_PREVIEW"
     >
       <span class="font_BH3 cursor-pointer">短衝檢視會議</span>
-      <span class="font_BH4 cursor-pointer">Sprint Review</span>
+      <span class="font_paragraph cursor-pointer">Sprint Review</span>
     </div>
     <div
       (click)="currentTabIdx = sprintCycle.SPRINT_RETROSPECTIVE"
@@ -29,10 +29,10 @@
       [class.active]="currentTabIdx === sprintCycle.SPRINT_RETROSPECTIVE"
     >
       <span class="font_BH3 cursor-pointer">短衝自省會議</span>
-      <span class="font_BH4 cursor-pointer">Sprint Retrospective</span>
+      <span class="font_paragraph cursor-pointer">Sprint Retrospective</span>
     </div>
   </div>
-  <div class="content bg-white font_BH3 secondary">
+  <div class="content bg-white font_BH4 secondary">
     <div *ngIf="currentTabIdx === sprintCycle.DAILY_SCRUM">
       <div>每天都要進行的會議，以 15 分鐘為限制 ：</div>
       <ul>

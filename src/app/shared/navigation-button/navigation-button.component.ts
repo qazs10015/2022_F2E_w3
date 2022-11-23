@@ -26,6 +26,7 @@ export class NavigationButtonComponent implements OnInit {
   goNext() {
     if (this.enableNextButton)
       this.clickNextButton.emit();
+
   }
 
 }

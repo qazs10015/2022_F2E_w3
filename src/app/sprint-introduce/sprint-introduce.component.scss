@@ -20,6 +20,16 @@
   .active {
     color: var(--white);
     opacity: 1;
+    & span:first-child:before {
+      content: "";
+      background-image: url(../../assets/images/icon.png);
+      background-repeat: no-repeat;
+      width: 27px;
+      height: 32px;
+      position: absolute;
+      margin-left: -40px;
+      margin-top: 8px;
+    }
   }
 }
 
