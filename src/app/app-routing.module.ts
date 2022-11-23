@@ -9,14 +9,14 @@ import { SprintIntroduceComponent } from './sprint-introduce/sprint-introduce.co
 import { TheEndComponent } from './the-end/the-end.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
   { path: 'roles', component: RolesComponent },
   { path: 'productPending', component: ProductPendingComponent },
   { path: 'sprintPending', component: SprintPendingComponent },
   { path: 'sprintIntroduce', component: SprintIntroduceComponent },
   { path: 'sprintFlow', component: SprintFlowComponent },
   { path: 'theEndComponent', component: TheEndComponent },
-  { path: '**', redirectTo: '/home', pathMatch: 'full' }];
+  { path: '**', redirectTo: '/', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
