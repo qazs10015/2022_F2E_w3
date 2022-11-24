@@ -49,7 +49,7 @@ export class ProductPendingComponent implements OnInit {
 
   goNext() {
     // verify answer
-    const correctAnswer = [1, 2, 3, 4];
+    const correctAnswer = [1, 3, 4, 2];
     const answer = this.done.map(item => item.id);
 
     const isCorrectAnswer = answer.every((value, index) => { return value === correctAnswer[index] })
