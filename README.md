@@ -12,6 +12,8 @@
 
 > 瀏覽器請用正常 100%，放大或縮小都會造成跑版
 
+> 瀏覽器建議使用 Chrome
+
 ## 系統說明
 
 專案運行方式是使用 `npm install`、`npm start`
@@ -22,15 +24,19 @@
 
 ## 資料夾說明
 
+依照設計師的設計稿分成 個分鏡
 ```
 src
+ | --- shared 共用元件
  | --- app
- | --- animes (設計師提供的動畫檔)
- | --- service 
- | --- interface 
- | --- sign-doc
- |       | --- create-sign (建立/上傳簽名檔)
- |       | --- preview-doc (瀏覽 pdf 並可依位置放上簽名檔並儲存)
+ |       | --- home (首頁)
+ |       | --- roles (角色介紹)
+ |       | --- product-pending (商品代辦清單)
+ |       | --- sprint-pending (Sprint 代辦清單)
+ |       | --- sprint-introduce (Sprint 介紹)
+ |       | --- sprint-flow (Sprint 流程圖)
+ |       | --- retro (Retrospective)
+ |       | --- sprint-flow (結束)
  | --- app-routing.module.ts
  | --- app.component.html
  | --- app.component.scss
@@ -46,5 +52,4 @@ src
 
 * Programming Language：Typescript、Javascript、HTML、SCSS
 
-* 其他套件：
-
+* 其他套件：[Angular Material](https://material.angular.io/)
