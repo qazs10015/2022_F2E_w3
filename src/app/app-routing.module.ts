@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'sprintIntroduce', component: SprintIntroduceComponent },
   { path: 'sprintFlow', component: SprintFlowComponent },
   { path: 'retro', component: RetroComponent },
-  { path: 'theEndComponent', component: TheEndComponent },
+  { path: 'theEnd', component: TheEndComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' }];
 
 @NgModule({

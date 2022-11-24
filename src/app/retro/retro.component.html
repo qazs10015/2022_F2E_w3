@@ -1,1 +1,56 @@
-<p>retro works!</p>
+<app-layout>
+  <div>
+    <img src="assets/images/process_6.png" alt="" />
+  </div>
+  <div class="overView">
+    <img src="assets/images/{{ messageImg }}" alt="" />
+  </div>
+  <div class="content">
+    <div>
+      <div class="title font_BH3 white">做得好的地方</div>
+      <ul class="optionGroup">
+        <li
+          class="cursor-pointer option font_BH4 secondary"
+          (click)="chooseBetterThing(1)"
+          [class.active]="betterThing === 1"
+        >
+          這次我幫了很多人救火耶
+        </li>
+        <li
+          class="cursor-pointer option font_BH4 secondary"
+          (click)="chooseBetterThing(2)"
+          [class.active]="betterThing === 2"
+        >
+          大家在開發上都會互相幫助，讓任務準時在時間內完成。
+        </li>
+      </ul>
+    </div>
+    <div>
+      <div class="title font_BH3 white">有哪些可以做得更好?</div>
+      <ul class="optionGroup">
+        <li
+          class="cursor-pointer option font_BH4 secondary"
+          (click)="chooseBeBetterThing(3)"
+          [class.active]="beBetterThing === 3"
+        >
+          可以記錄這次的開發時間，讓預估團隊點數可以更精準。
+        </li>
+        <li
+          class="cursor-pointer option font_BH4 secondary"
+          (click)="chooseBeBetterThing(4)"
+          [class.active]="beBetterThing === 4"
+        >
+          開發時間預估不準確，請後端下次改進，避免 delay 到我。
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <!-- back or next -->
+    <app-navigation-button
+      (clickPreButton)="goPrevious()"
+      (clickNextButton)="goNext()"
+      [enableNextButton]="canGoNext"
+    ></app-navigation-button>
+  </div>
+</app-layout>
