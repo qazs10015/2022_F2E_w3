@@ -52,7 +52,7 @@ export class SprintPendingComponent implements OnInit {
       }
 
       // verify answer
-      this.canGoNext = (this.currentPoints.length <= 20 && this.done.length === 3);
+      this.canGoNext = (this.currentPoints.length <= 20 && this.done.length >= 2);
     }
   }
 
